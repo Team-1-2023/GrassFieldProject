@@ -16,6 +16,11 @@ const getBasketM = (userId)=>{
     return  connection.promise().query(sql,[userId])
 }
 
+const deleteFromBasketM = (userId,productId) => {
+    var sql = `DELETE FROM basket
+    WHERE users_idusers = ? AND products_idproducts = ?`;
+    return connection.promise().query(sql, [userId, productId]);
+}
 
 
 
@@ -23,4 +28,4 @@ const getBasketM = (userId)=>{
 
 
 
-module.exports = {addTobasketM,getBasketM}
+module.exports = {addTobasketM,getBasketM,deleteFromBasketM}
