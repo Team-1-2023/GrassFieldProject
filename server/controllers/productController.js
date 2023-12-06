@@ -1,4 +1,4 @@
-const { getproduct } = require('../models/productsModel.js');
+const { getproduct ,getfiltredproduct} = require('../models/productsModel.js');
 
 const getProductController = (req, res) => {
   getproduct((err, results) => {
@@ -10,5 +10,13 @@ const getProductController = (req, res) => {
     }
   });
 };
+const getFiltredProductController = (req, res) => {
 
-module.exports = { getProductController };
+    getfiltredproduct(req.params.category, req.params.type).then((products) => {
+        res.send(products[0])}).catch((err) => { res.send(err)
+
+    });
+}
+
+
+module.exports = { getProductController ,getFiltredProductController};

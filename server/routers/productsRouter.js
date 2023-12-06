@@ -3,7 +3,8 @@ const router = express.Router();
 
 
 
-const {getProductController}= require('../controllers/productController.js')
+const {getProductController,getFiltredProductController}= require('../controllers/productController.js')
 
 router.get('/',getProductController)
+router.get('/:category/:type',getFiltredProductController)
 module.exports = router
