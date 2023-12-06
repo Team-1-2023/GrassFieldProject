@@ -1,4 +1,4 @@
-const {addTobasketM,getBasketM} = require('../models/basketModel.js')
+const {addTobasketM,getBasketM,deleteFromBasketM} = require('../models/basketModel.js')
 
 
 const addTobasketC = (req,res) => {
@@ -13,8 +13,14 @@ const getBasketC = (req,res)=> {
     getBasketM(userId).then(response=>res.send(response[0])).catch(error=>res.send(error))
 }
 
+const deleteFromBasketC = (req,res)=> {
+    userId = req.params.userid
+    productId = req.params.productid
+    deleteFromBasketM(userId,productId).then(response=>{res.send(response)}).catch(error=>{res.send(error)})
+}
 
 
 
 
-module.exports = {addTobasketC,getBasketC}
+
+module.exports = {addTobasketC,getBasketC,deleteFromBasketC}
