@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS `shopManager`.`users` (
   `idusers` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(255) NULL,
+  `admin` TINYINT NULL DEFAULT 0,
+  `adress` VARCHAR(255) NULL,
   PRIMARY KEY (`idusers`))
 ENGINE = InnoDB;
 
@@ -86,17 +88,6 @@ CREATE TABLE IF NOT EXISTS `shopManager`.`reviews` (
     REFERENCES `shopManager`.`products` (`idproducts`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `shopManager`.`admin`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `shopManager`.`admin` (
-  `idadmin` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NULL,
-  `password` VARCHAR(255) NULL,
-  PRIMARY KEY (`idadmin`))
 ENGINE = InnoDB;
 
 
