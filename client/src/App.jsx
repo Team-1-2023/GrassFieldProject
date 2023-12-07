@@ -6,7 +6,6 @@ import Home from './Pages/Home';
 
 function App() {
   return (
-<<<<<<< HEAD:client/grassField/src/App.jsx
     <Router>
       <Header />
       <Switch>
@@ -14,10 +13,6 @@ function App() {
       </Switch>
     </Router>
   );
-=======
-  <h1 className="text-3xl font-bold underline">Hello</h1>
-  )
->>>>>>> 911f847f8dc02fd9eb08e45b4d9a7b2f6886ea7e:client/src/App.jsx
 }
 
 export default App;
