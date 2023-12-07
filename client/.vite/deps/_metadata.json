@@ -1,0 +1,23 @@
+{
+  "hash": "a63c46e4",
+  "browserHash": "8d7ef399",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "f1d2213d",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "6fa0c932",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ZTNEXMUL": {
+      "file": "chunk-ZTNEXMUL.js"
+    }
+  }
+}

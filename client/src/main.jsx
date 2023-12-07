@@ -1,10 +1,11 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom/client";
-import Home from "./Pages/Home";
-import User from "./Pages/Product"
-import Basket from "./Pages/Basket"
-import Admin from "./Pages/Admin"
-import Product from "./Pages/Product";
+import * as ReactDOM from "react-dom/client.jsx";
+import Home from "./Pages/Home.jsx";
+import UserLog from "./Pages/UserLog.jsx"
+import UserSign from "./Pages/UserLog.jsx"
+import Basket from "./Pages/Basket.jsx"
+import Admin from "./Pages/Admin.jsx"
+import Product from "./Pages/Product.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
     element: <Home/>,
   },
   {
-    path: "/user",
-    element: <User/>,
+    path: "/userlog",
+    element: <UserLog/>,
+  },
+  {
+    path: "/usersign",
+    element: <UserSign/>,
   },
   {
     path: "/basket",
