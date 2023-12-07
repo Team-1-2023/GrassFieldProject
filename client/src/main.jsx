@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client.jsx";
+import React from "react";
+import ReactDOM from "react-dom";
 import Home from "./Pages/Home.jsx";
 import UserLog from "./Pages/UserLog.jsx"
 import UserSign from "./Pages/UserLog.jsx"

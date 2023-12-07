@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./admin.css"
 import axios from "axios";
 
-const Form = ()=>{
+const Form = (props)=>{
     const [name, setName]= useState("")
     const [category, setCategory]= useState("")
     const [price, setPrice]= useState("")
@@ -12,8 +12,8 @@ const Form = ()=>{
     const [productType, setProductType]= useState("")
 
     const postProduct = ()=>{
-        axios.post("http://localhost:3000/api/admin/products", {name,category,price,quantity,description,imageUrl,productType}).then((response)=>{
-            console.log(response)
+        axios.post("http://localhost:3000/api/admin/products", {name,category,price,quantity,description,imageUrl,productType}).then(()=>{
+            props.fetchProducts()
         })
     }
     
