@@ -1,6 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import Home from "./Pages/Home";
+import User from "./Pages/Product"
+import Basket from "./Pages/Basket"
+import Admin from "./Pages/Admin"
+import Product from "./Pages/Product";
 import {
   createBrowserRouter,
   RouterProvider,
