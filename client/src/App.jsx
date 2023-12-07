@@ -6,13 +6,8 @@ import Home from './Pages/Home';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact component={Home} />
-      </Switch>
-    </Router>
-  );
+  <h1 className="text-3xl font-bold underline">Hello</h1>
+  )
 }
 
 export default App;
