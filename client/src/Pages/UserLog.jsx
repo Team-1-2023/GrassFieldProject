@@ -13,9 +13,9 @@ const [inputs, setInputs] = useState(
 )
 
 const navigate =useNavigate()
-const {currentuser} = useContext(UserContext)
+const {UserLog} = useContext(UserContext)
 
-console.log(currentuser);
+
 
 
 
@@ -29,7 +29,7 @@ const [err, setError] = useState(null);
 const handelSubmit = async (e) => {
     e.preventDefault()
     try {
-        await axios.post("http://localhost:3000/api/users/login", inputs)
+        await UserLog( inputs)
         navigate("/")
     } catch (err) {
         setError(err.response.data)
