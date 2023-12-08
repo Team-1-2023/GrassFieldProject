@@ -5,7 +5,7 @@ const {signupcontroller,login,logout} = require("../controllers/usersController.
 
 
 router.post("/signup", signupcontroller)
-router.get("/login", login)
+router.post("/login", login)
 router.put("/logout", logout)
 
 
