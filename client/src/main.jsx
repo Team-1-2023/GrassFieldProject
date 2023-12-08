@@ -18,25 +18,31 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    element: <Home />,
   },
   {
     path: "/userlog",
+    element: <UserLog />,
     element: <UserLog />,
   },
   {
     path: "/usersign",
     element: <UserSign />,
+    element: <UserSign />,
   },
   {
     path: "/basket",
+    element: <Basket />,
     element: <Basket />,
   },
   {
     path: "/product",
     element: <Product />,
+    element: <Product />,
   },
   {
     path: "/admin",
+    element: <Admin />,
     element: <Admin />,
   },
 ]);
