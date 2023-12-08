@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Product = ({ data }) => {
-    console.log(data ,"hsddddddddjdbKSBCKQSVCKQSVCKAVS");
+    const {id} = useParams()
+    //make a function in the back end that fetch one product by its id 
+    // fetch it here and use the details make this page with a button that add the product to the basket 
+    // mawjouda fel back jawha behi just send a request 
+    // baad you fetch the reviews kol w tjibhom mlouta 
+    //w yabda andk bouton i7elk form you can add a review faha 
+    //everything is functional in the back jst axios axios w jawek behi
 //   const [review, setReview] = useState("");
 
 //   const AddToBasket = () => {
 //     console.log("data added to basket:",data);
 //   };
 
-//   const AddToWishlist = () => {
-//     console.log("data added to wishlist:", data);
-//   };
 
 //   const SubmitReview = () => {
 //     console.log("Review submitted:", review);
@@ -35,12 +39,7 @@ const Product = ({ data }) => {
           >
             Add to Basket
           </button>
-          <button
-            className="bg-yellow-500 text-white px-4 py-2 rounded"
-            onClick={AddToWishlist}
-          >
-            Add to Wishlist
-          </button>
+         
         </div>
 
         <div className="mb-4">

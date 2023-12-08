@@ -9,7 +9,7 @@ const Filters = () => {
     
     return (
         <div className="w-[20%] h-fit bg-gray-200 p-6 rounded gap-2">
-          <h>Category:</h>
+          <h4>Category:</h4>
           <label className="flex items-center mb-2">
             <input
               type="radio"
@@ -45,7 +45,7 @@ const Filters = () => {
             />
             <span className="ml-2">Makeup</span>
           </label>
-          {category && <div><h>Product type:</h> <Type cat={category}/></div>}
+          {category && <div><h4>Product type:</h4> <Type cat={category}/></div>}
         </div>
        
     )

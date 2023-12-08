@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Products from "../components/Products.jsx";
 import Layout from "../components/Layout.jsx";
 import Filters from "../components/Filters.jsx";
 
 const Home = () => {
+  // const {currentUser} = useContext(useContext)
   const [data, setData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
 console.log(data, "data home");
@@ -18,7 +19,8 @@ console.log(data, "data home");
   };
 
   useEffect(() => {
-    getData();
+    // console.log(currentUser)  
+     getData();
   }, []);
 
   
