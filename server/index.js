@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const db= require('./models/index.js')
 const cors=require("cors")
 
@@ -8,6 +9,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json())
+app.use(cookieParser())
 app.use(cors())
 
 ////////////////////////////Routes//////////////////////////
