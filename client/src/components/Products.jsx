@@ -1,6 +1,7 @@
 import React from "react";
 
 const Products = ({ data }) => {
+  // console.log(data,"hdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
   return (
     <div className="grid grid-cols-3 gap-4">
       {data.map((product) => (
