@@ -20,7 +20,7 @@ const Footer = () => {
                     </address>
                 </div>
 
-                <ul className="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
+                <ul className="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0 flex gap-6">
                     <li className="mb-2">
                         <h2 className="text-lg font-bold mb-1">Media</h2>
                         <ul className="text-gray-600">
