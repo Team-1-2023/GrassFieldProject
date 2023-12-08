@@ -1,7 +1,7 @@
 import React, { useState,useContext  } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import {usersContext}  from "../../context/userContext.jsx";
+import UserContext from "../../context/UserContext";
 
 
 const UserLog= () => {
@@ -13,7 +13,7 @@ const [inputs, setInputs] = useState(
 )
 
 const navigate =useNavigate()
-const {currentuser} = useContext(usersContext)
+const {currentuser} = useContext(UserContext)
 
 console.log(currentuser);
 

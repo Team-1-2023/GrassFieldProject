@@ -2,10 +2,10 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
 
-const usersContext = createContext();
+const UserContext = createContext();
 
 
-const userContexProvider = ({ children }) => {
+const UserContexProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
@@ -23,13 +23,14 @@ const userContexProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
+  
 
   return (
-    <usersContext.Provider value={{ currentUser, login, logout }}>
+    <UserContext.Provider value={{ currentUser, login, logout }}>
       {children}
-    </usersContext.Provider>
+    </UserContext.Provider>
   );
 };
 
-export default {userContexProvider};
-export  {usersContext};
+export  {UserContexProvider};
+export default UserContext;

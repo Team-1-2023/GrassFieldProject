@@ -6,7 +6,7 @@ import UserSign from "./Pages/UserSign.jsx"
 import Basket from "./Pages/Basket.jsx"
 import Admin from "./Pages/Admin.jsx"
 import Product from "./Pages/Product.jsx";
-import {userContexProvider}  from "../context/userContext.jsx";
+import {UserContexProvider}   from "../context/UserContext.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -45,9 +45,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <div className='app'>
     <div className='container'>
       <React.StrictMode >
-        <userContexProvider>
+        <UserContexProvider>
         <RouterProvider router={router} />
-        </userContexProvider>
+        </UserContexProvider>
       </React.StrictMode>,
     </div>
   </div>
