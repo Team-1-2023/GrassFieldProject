@@ -6,6 +6,8 @@ import UserSign from "./Pages/UserSign.jsx"
 import Basket from "./Pages/Basket.jsx"
 import Admin from "./Pages/Admin.jsx"
 import Product from "./Pages/Product.jsx";
+// import AdminProduct from "./Pages/adminPages/AdminProd.jsx";
+import AdminInterface from "./Pages/adminPages/adminInterface.jsx";
 import {UserContexProvider}   from "../context/UserContext.jsx";
 import {
   createBrowserRouter,
@@ -13,37 +15,37 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import './style.scss'
+import AdminProduct from "./Pages/adminPages/AdminProd.jsx";
+import Users from "./Pages/adminPages/users.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    element: <Home />,
   },
   {
     path: "/userlog",
-    element: <UserLog />,
     element: <UserLog />,
   },
   {
     path: "/usersign",
     element: <UserSign />,
-    element: <UserSign />,
   },
   {
-    path: "/basket",
-    element: <Basket />,
+    path: "/basket/:id",
     element: <Basket />,
   },
   {
-    path: "/product",
-    element: <Product />,
+    path: "/product/:id",
     element: <Product />,
   },
   {
     path: "/admin",
     element: <Admin />,
-    element: <Admin />,
+    children:[
+      {path:"interface" ,element:<AdminInterface/>},
+      {path:"product" ,element:<AdminProduct/>}
+    ]
   },
 ]);
 

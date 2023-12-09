@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const Product = (props)=>{
+const AdminProduct = (props)=>{
     const [newprice, setNewPrice]= useState("")
 console.log(props.product)
 
@@ -30,4 +30,4 @@ console.log(props.product)
         </div>
     )
 }
-export default Product; 
+export default AdminProduct; 

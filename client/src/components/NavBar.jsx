@@ -11,17 +11,26 @@ const NavBar = () => {
     return (
         <nav className="bg-gray-800 p-4 flex justify-between items-center">
             <div className="flex items-center">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                    My Card
+                <button className="bg-red-800 text-white px-4 py-2 rounded"
+                onClick={(e)=>{
+                    navigate("/basket")
+                }}>
+                    My Basket
+                </button>
+                
+                <button onClick={e=>{navigate("/userLog")}} className="bg-red-800 text-white ml-4 px-4 py-2 rounded">
+                    Login
                 </button>
                 <button className="bg-red-800 text-white ml-4 px-4 py-2 rounded">
                     Logout
                 </button>
             </div>
             <div className="flex items-center justify-center">
-                <Link to="/" className="text-white text-lg font-bold" onClick={handleNameClick}>
+                <button className="text-white text-lg font-bold" onClick={(e)=>{
+                    navigate("/")
+                }}>
                      maryem mraw7a Gasrin
-                </Link>
+                </button>
             </div>
             <div className="flex items-center">
                 <input
