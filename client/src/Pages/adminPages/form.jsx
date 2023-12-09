@@ -16,7 +16,6 @@ const Form = (props) => {
 
   const handleClick = () => {
     const imageRef = ref(imageDb, `files/${v4()}`);
-    console.log(imageRef, "sqjdlkrs");
     uploadBytes(imageRef, image)
       .then(() => {
         getImage();
@@ -54,43 +53,56 @@ const Form = (props) => {
   };
 
   return (
-    <div>
+    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
       <input
         type="text"
-        placeholder="name"
+        placeholder="Name"
+        className="input-field"
         onChange={(e) => setName(e.target.value)}
       />
       <input
         type="text"
-        placeholder="category"
+        placeholder="Category"
+        className="input-field"
         onChange={(e) => setCategory(e.target.value)}
       />
       <input
         type="text"
-        placeholder="price"
+        placeholder="Price"
+        className="input-field"
         onChange={(e) => setPrice(e.target.value)}
       />
       <input
         type="text"
-        placeholder="quantity"
+        placeholder="Quantity"
+        className="input-field"
         onChange={(e) => setQuantity(e.target.value)}
       />
       <input
         type="text"
-        placeholder="description"
+        placeholder="Description"
+        className="input-field"
         onChange={(e) => setDescription(e.target.value)}
       />
-
       <input
         type="text"
-        placeholder="productType"
+        placeholder="Product Type"
+        className="input-field"
         onChange={(e) => setProductType(e.target.value)}
       />
-      <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-      <button onClick={handleClick}>upload image</button>
-      <button onClick={postProduct} className=" bg-darkRed">
-        {" "}
-        add product
+      <input
+        type="file"
+        className="input-field"
+        onChange={(e) => setImage(e.target.files[0])}
+      />
+      <button
+        onClick={handleClick}
+        className="hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+      >
+        Upload Image
+      </button>
+      <button onClick={postProduct} className="hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Add Product
       </button>
     </div>
   );

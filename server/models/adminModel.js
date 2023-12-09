@@ -38,6 +38,18 @@ module.exports = {
         connection.query(sql,[name,category,price,quantity,description,imageUrl,productType],function(error,results){
             callback(error,results)
         })
+    },
+    removeReview: function(id,callback){
+        const sql = `delete from reviews where reviews_id = ${id}`
+        connection.query(sql, function(error,results){
+            callback(error,results)
+        })
+    },
+    getAllReviews: function(callback){
+        const sql = `select * from reviews`
+        connection.query(sql,function(error,results){
+            callback(error,results)
+        })
     }
 
 }

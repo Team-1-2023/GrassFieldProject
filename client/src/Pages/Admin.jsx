@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import axios from "axios";
 import AdminInterface from "./adminPages/adminInterface";
 import Layout from "../components/Layout.jsx";
+import { Link } from "react-router-dom";
 
 const Admin = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  // return (
-  //         <Layout>
-  //     <div>
-  //         <AdminInterface/>
-  //     </div>
-  //         </Layout>
-  // )
+  return (
+          
+      <div>
+          <AdminInterface/>
+      </div>
+          
+  )
   return (
     <div className="font-mono bg-gray-400">
       <div className="container mx-auto">
@@ -77,7 +78,7 @@ const Admin = () => {
                     className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
                     type="button"
                   >
-                    Sign In
+                    <Link to="interface">sign in</Link>
                   </button>
                 </div>
                 <hr className="mb-6 border-t" />
