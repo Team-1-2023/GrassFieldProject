@@ -96,25 +96,25 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
--- INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
--- VALUES
---   ('Urban Decay Naked3 Eyeshadow Palette', 'Makeup', 54.00, 18, 'A rose-hued eyeshadow palette with versatile shades for creating romantic looks.', 'https://di2ponv0v5otw.cloudfront.net/posts/2023/12/03/656d5a5c9464f3decdbb7f9b/m_656d5ab1308f07afcb4b9e7a.jpg', 'Eye'),
---   ('La Mer Crème de la Mer Moisturizing Cream', 'Skincare', 185.00, 8, 'An ultra-rich moisturizing cream that deeply hydrates and rejuvenates the skin.', 'https://tse4.mm.bing.net/th?id=OIP.3zSMxeiliodyJUf0sBg1FwHaLW&pid=Api&P=0&h=220', 'Moisturizer'),
---   ('Dior Sauvage Eau de Toilette', 'Fragrance', 95.00, 14, 'A fresh and spicy fragrance with notes of bergamot, pepper, and vanilla.', 'https://www.nocibe.fr/bibliotheque/produits/DIOR/204337_dior_sauvage_eau_de_toilette_eau_de_toilette_60ml_packaging_1000x1000.jpg', 'Men');
+INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
+VALUES
+  ('Urban Decay Naked3 Eyeshadow Palette', 'Makeup', 54.00, 18, 'A rose-hued eyeshadow palette with versatile shades for creating romantic looks.', 'https://di2ponv0v5otw.cloudfront.net/posts/2023/12/03/656d5a5c9464f3decdbb7f9b/m_656d5ab1308f07afcb4b9e7a.jpg', 'Eye'),
+  ('La Mer Crème de la Mer Moisturizing Cream', 'Skincare', 185.00, 8, 'An ultra-rich moisturizing cream that deeply hydrates and rejuvenates the skin.', 'https://tse4.mm.bing.net/th?id=OIP.3zSMxeiliodyJUf0sBg1FwHaLW&pid=Api&P=0&h=220', 'Moisturizer'),
+  ('Dior Sauvage Eau de Toilette', 'Fragrance', 95.00, 14, 'A fresh and spicy fragrance with notes of bergamot, pepper, and vanilla.', 'https://www.nocibe.fr/bibliotheque/produits/DIOR/204337_dior_sauvage_eau_de_toilette_eau_de_toilette_60ml_packaging_1000x1000.jpg', 'Men');
 
 
--- INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
--- VALUES
---   ('Too Faced Better Than Sex Mascara', 'Makeup', 26.00, 25, 'A volumizing mascara for intense black lashes with a dramatic curl.', 'https://blogit-cdn.a-lehdet.fi/uploads/sites/69/2017/02/too-faced-better-than-sex-mascara-1-6.jpg', 'Eye'),
---   ('GlamGlow Supermud Clearing Treatment', 'Skincare', 59.00, 15, 'A facial mask that helps clear and prevent breakouts for a clearer complexion.', 'https://tse4.mm.bing.net/th?id=OIP.UUDQ23joN7oA3uHWmPPF3gHaE7&pid=Api&P=0&h=220', 'Mask'),
---   ('Marc Jacobs Daisy Eau de Toilette', 'Fragrance', 84.00, 20, 'A floral and feminine fragrance with notes of wild berries and jasmine.', 'https://tse2.mm.bing.net/th?id=OIP.ZGzmvpMEzT6z0xPFYU5mLAHaHa&pid=Api&P=0&h=220', 'Women');
+INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
+VALUES
+  ('Too Faced Better Than Sex Mascara', 'Makeup', 26.00, 25, 'A volumizing mascara for intense black lashes with a dramatic curl.', 'https://blogit-cdn.a-lehdet.fi/uploads/sites/69/2017/02/too-faced-better-than-sex-mascara-1-6.jpg', 'Eye'),
+  ('GlamGlow Supermud Clearing Treatment', 'Skincare', 59.00, 15, 'A facial mask that helps clear and prevent breakouts for a clearer complexion.', 'https://tse4.mm.bing.net/th?id=OIP.UUDQ23joN7oA3uHWmPPF3gHaE7&pid=Api&P=0&h=220', 'Mask'),
+  ('Marc Jacobs Daisy Eau de Toilette', 'Fragrance', 84.00, 20, 'A floral and feminine fragrance with notes of wild berries and jasmine.', 'https://tse2.mm.bing.net/th?id=OIP.ZGzmvpMEzT6z0xPFYU5mLAHaHa&pid=Api&P=0&h=220', 'Women');
 
 
 
 
 
--- INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
--- VALUES
---   ('Anastasia Beverly Hills Dipbrow Pomade', 'Makeup', 21.00, 30, 'A waterproof and smudge-proof eyebrow pomade for defined and sculpted brows.', 'https://tse1.mm.bing.net/th?id=OIP.n2nNWuS01rm7zUCeuPm0HQHaE8&pid=Api&P=0&h=220', 'Eye'),
---   ('Caudalie Beauty Elixir', 'Skincare', 49.00, 12, 'A refreshing facial mist that tones and sets makeup while providing a radiant glow.', 'https://tse2.mm.bing.net/th?id=OIP.4nSb_y7rQ4yHmQVFKj1b1QHaI7&pid=Api&P=0&h=220', 'Moisturizer'),
---   ('Giorgio Armani Acqua Di Gioia Eau de Parfum', 'Fragrance', 72.00, 16, 'A fresh and aquatic fragrance with notes of mint, lemon, and jasmine.', 'https://tse2.mm.bing.net/th?id=OIP.2HHs47SOB--qs01Id4f24QHaHa&pid=Api&P=0&h=220', 'Women');
+INSERT INTO products (name, category, price, quantity, description, imageUrl, productType)
+VALUES
+  ('Anastasia Beverly Hills Dipbrow Pomade', 'Makeup', 21.00, 30, 'A waterproof and smudge-proof eyebrow pomade for defined and sculpted brows.', 'https://tse1.mm.bing.net/th?id=OIP.n2nNWuS01rm7zUCeuPm0HQHaE8&pid=Api&P=0&h=220', 'Eye'),
+  ('Caudalie Beauty Elixir', 'Skincare', 49.00, 12, 'A refreshing facial mist that tones and sets makeup while providing a radiant glow.', 'https://tse2.mm.bing.net/th?id=OIP.4nSb_y7rQ4yHmQVFKj1b1QHaI7&pid=Api&P=0&h=220', 'Moisturizer'),
+  ('Giorgio Armani Acqua Di Gioia Eau de Parfum', 'Fragrance', 72.00, 16, 'A fresh and aquatic fragrance with notes of mint, lemon, and jasmine.', 'https://tse2.mm.bing.net/th?id=OIP.2HHs47SOB--qs01Id4f24QHaHa&pid=Api&P=0&h=220', 'Women');

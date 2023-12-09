@@ -29,7 +29,7 @@ const UserSign = () => {
             await axios.post("http://localhost:3000/api/users/signup", inputs)
             navigate("/userlog")
         } catch (err) {
-            setError(err.response.data)
+            setError("lol",err)
         }
     }
 

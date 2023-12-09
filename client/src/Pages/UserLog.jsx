@@ -13,7 +13,7 @@ const [inputs, setInputs] = useState(
 )
 
 const navigate =useNavigate()
-const {UserLog} = useContext(UserContext)
+const {login} = useContext(UserContext)
 
 
 
@@ -29,10 +29,10 @@ const [err, setError] = useState(null);
 const handelSubmit = async (e) => {
     e.preventDefault()
     try {
-        await UserLog( inputs)
+        await login( inputs)
         navigate("/")
     } catch (err) {
-        setError(err.response.data)
+        setError(err)
     }
 }
 
@@ -46,7 +46,7 @@ const handelSubmit = async (e) => {
                 <input type="password" placeholder="password" name="password" onChange={handleChange}/>
                 <button onClick={handelSubmit}>Login </button>
                 {err && <p>{err}</p>}
-                <span> don't you have an account? <Link to="/signup">Signup</Link></span>
+                <span> don't you have an account? <Link to="/usersign">Signup</Link></span>
             </form>
         </div>
     )
