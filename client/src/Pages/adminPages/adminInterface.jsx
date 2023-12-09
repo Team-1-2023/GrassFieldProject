@@ -3,12 +3,14 @@ import Form from "./form";
 import { useEffect, useState } from "react";
 import ProductList from "./productList";
 import Users from "./users";
+import Comments from "./comments";
 
 const AdminInterface = () => {
   const [products, setProducts] = useState([]);
   const [view, setView] = useState("products");
   const [users, setUsers] = useState([]);
   const [formView, setFormView] = useState(false);
+  const [comments, setComments] = useState([])
 
   const fetchProducts = () => {
     axios.get("http://localhost:3000/api/admin/products").then((response) => {
@@ -26,6 +28,12 @@ const AdminInterface = () => {
       setView("users");
     });
   };
+  const fetchComments= ()=>{
+    axios.get("http://localhost:3000/api/admin/reviews").then((response)=>{
+        setComments(response.data)
+        setView("comments")
+    })
+  }
 
   return (
     <div>
@@ -60,7 +68,7 @@ const AdminInterface = () => {
             </button>
             <button
               className="mt-8 w-28 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-              onClick={fetchUsers}
+              onClick={fetchComments}
             >
               Comments
             </button>
@@ -71,6 +79,7 @@ const AdminInterface = () => {
               <ProductList products={products} fetchProducts={fetchProducts} />
             )}
             {view === "users" && <Users fetchUsers={fetchUsers} users={users} />}
+            {view === "comments" && <Comments fetchComments={fetchComments} comments={comments} />}
           </div>
         </div>
       )}
