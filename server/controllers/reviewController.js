@@ -25,5 +25,4 @@ const postReview = (req, res) => {
     })
 }
 
-module.exports = getAllreviewC;
-module.exports = postReview
+module.exports = { getAllreviewC, postReview };

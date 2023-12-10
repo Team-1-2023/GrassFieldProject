@@ -16,7 +16,7 @@ const Footer = () => {
                     <h2 onClick={handleAdminClick} className="cursor-pointer">Admin</h2>
                     <address className="text-gray-600">
                         RBK sousse<br />
-                        <a className="text-blue-500" href="mailto:">Email Us</a>
+                        <a className="text-black-500" href="mailto:">Email Us</a>
                     </address>
                 </div>
 
@@ -31,15 +31,6 @@ const Footer = () => {
                         </ul>
                     </li>
 
-                    <li className="mb-2">
-                        <h2 className="text-lg font-bold mb-1">Technology</h2>
-                        <ul className="text-gray-600">
-                            <li><a href="#">Hardware Design</a></li>
-                            <li><a href="#">Software Design</a></li>
-                            <li><a href="#">Artificial Intelligence</a></li>
-                        </ul>
-                    </li>
-
                     <li>
                         <h2 className="text-lg font-bold mb-1">Legal</h2>
                         <ul className="text-gray-600">
@@ -51,7 +42,7 @@ const Footer = () => {
                 <div className="w-full lg:w-1/4 text-gray-600">
                     <p>&copy; 2023 All rights reserved.</p>
                     <div className="mt-2">
-                        <p>Made by <span className="text-red-500">♥</span> Wael Meryem Khalil and Wided</p>
+                        <p>Made by <span className="text-red-500">♥</span> Wael Myriam Khalil and Wided</p>
                     </div>
                 </div>
             </div>

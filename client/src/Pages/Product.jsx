@@ -1,69 +1,92 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import UserContext from "../../context/UserContext";
+
 
 const Product = () => {
-    // const { id } = useParams();
-    // const [product, setProduct] = useState({});
-    // const [review, setReview] = useState("");
+    const { id } = useParams();
+    const [product, setProduct] = useState({});
+    const [review, setReview] = useState("");
+    const [reviews, setReviews] = useState([])
 
-    // useEffect(() => {
-    //     const fetchProduct = async () => {
-    //         try {
-    //             const response = await axios.get(`http://localhost:3000/api/products/${id}`);
-    //             setProduct(response.data);
-    //         } catch (error) {
-    //             console.error("Error fetching product details:", error);
-    //         }
-    //     };
+    const {currentUser}= useContext(UserContext)
 
-    //     fetchProduct();
-    // }, [id]);
+    useEffect(() => {
+        fetchReviews()
+        fetchProduct();
+    }, []);
 
-    // const AddToBasket = () => {
-    // };
+    const fetchProduct =  () => {
+        axios.get(`http://localhost:3000/api/products/${id}`)
+        .then(response => {setProduct(response.data)})
+        .catch(error=>console.error(error))
+    };
 
-    // const SubmitReview = () => {
-    // };
+    console.log(product)
+   
 
-    // return (
-    //     <div className="flex p-8">
-    //         <div className="w-1/2">
-    //             <img src={product.imageUrl} alt={product.name} className="w-full h-auto" />
-    //         </div>
-    //         <div className="w-1/2 ml-8">
-    //             <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
-    //             <p className="text-gray-500 mb-4">{product.description}</p>
-    //             <p className="text-gray-500 mb-4">{product.category}</p>
-    //             <p className="text-green-600 font-bold mb-4">{product.quantity}</p>
-    //             <p className="text-green-600 font-bold mb-4">${product.price}</p>
+    const fetchReviews= ()=>{
+      axios.get(`http://localhost:3000/api/review/${id}`)
+      .then(response=>{
+        setReviews(response.data)
+      })
+      .catch(error=>console.error(error))
+    }
 
-    //             <div className="flex space-x-4 mb-4">
-    //                 <button
-    //                     className="bg-blue-500 text-white px-4 py-2 rounded"
-    //                     onClick={AddToBasket}
-    //                 >
-    //                     Add to Basket
-    //                 </button>
-    //             </div>
+    const AddToBasket = () => {
+      axios.post(`http://localhost:3000/api/basket/1`,{productid:id})
+      .then(useNavigate('/'))
+      .catch(error=>{console.log(error)})
+    };
 
-    //             <div className="mb-4">
-    //                 <label className="block text-gray-700 text-sm font-bold mb-2">
-    //                     Your Review:
-    //                 </label>
-    //                 <textarea
-    //                     rows="3"
-    //                     value={review}
-    //                     onChange={(e) => setReview(e.target.value)}
-    //                     className="w-full border rounded-md p-2"
-    //                 ></textarea>
-    //             </div>
+    const SubmitReview = (review) => {
+      axios.post(`http://localhost:3000/api/review/1/${id}`,{body:review})
+      .then(response=>{fetchReviews()})
+      .catch(error=>console.error(error))
+    };
 
-    //             <button className="bg-green-500 text-white px-4 py-2 rounded" onClick={SubmitReview}>Submit Review
-    //             </button>
-    //         </div>
-    //     </div>
-    // );
+    return (
+        <div className="flex p-8">
+            <div className="w-1/2">
+                <img src={product.imageUrl} alt={product.name} className="w-full h-auto" />
+            </div>
+            <div className="w-1/2 ml-8">
+                <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
+                <p className="text-gray-500 mb-4">{product.description}</p>
+                <p className="text-gray-500 mb-4">{product.category}</p>
+                <p className="text-green-600 font-bold mb-4">${product.price}</p>
+
+                <div className="flex space-x-4 mb-4">
+                    <button
+                        className="bg-blue-500 text-white px-4 py-2 rounded"
+                        onClick={() => AddToBasket()}
+                    >
+                        Add to Basket
+                    </button>
+                </div>
+
+                <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                        Your Review:
+                    </label>
+                    <textarea
+                        rows="3"
+                        value={review}
+                        onChange={(e) => setReview(e.target.value)}
+                        className="w-full border rounded-md p-2"
+                    ></textarea>
+                </div>
+                <button className="bg-green-500 text-white px-4 py-2 rounded"  onClick={() => SubmitReview(review)}>Submit Review
+                </button>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              {reviews.map(review=>{
+                return <p className="text-xl">{review.body}</p>
+              })}
+            </div>
+        </div>
+    );
 };
 
 export default Product;

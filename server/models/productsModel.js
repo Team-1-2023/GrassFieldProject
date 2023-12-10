@@ -13,4 +13,9 @@ const getfiltredproduct =(category,type) =>{
    return connection.promise().query(sql,[category, type])
 }
 
-module.exports = { getproduct,getfiltredproduct };
+const getOneproduct = (id) => {
+  var sql = `SELECT * FROM products WHERE idproducts= ?`
+  return connection.promise().query(sql,id)
+}
+
+module.exports = { getproduct,getfiltredproduct,getOneproduct };

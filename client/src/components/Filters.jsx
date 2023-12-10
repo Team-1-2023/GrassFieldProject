@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Type from "../components/Type"
 
 
+
 const Filters = () => {
     const [category,setCategory]= useState("")
 
@@ -13,7 +14,7 @@ const Filters = () => {
           <label className="flex items-center mb-2">
             <input
               type="radio"
-              className="form-radio text-blue-500"
+              className="form-radio text-black-500"
               name="radioOption"
               value="Fragrance"
             
@@ -25,7 +26,7 @@ const Filters = () => {
           <label className="flex items-center mb-2">
             <input
               type="radio"
-              className="form-radio text-blue-500"
+              className="form-radio text-black-500"
               name="radioOption"
               value="Skincare"
           
@@ -37,7 +38,7 @@ const Filters = () => {
           <label className="flex items-center mb-2">
             <input
               type="radio"
-              className="form-radio text-blue-500"
+              className="form-radio text-black-500"
               name="radioOption"
               value="Makeup"
               

@@ -32,7 +32,7 @@ const AdminInterface = () => {
             {formView && <Form fetchProducts={fetchProducts}/>}
             <div className="flex-auto flex h-36">
                 <div className=" flex-1 w-10">
-                    <button onClick={fetchProducts} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" >products</button>
+                    <button onClick={(e)=>{fetchProducts}} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" >products</button>
                     <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-5" onClick={fetchUsers}>users</button>
                 </div>
                 <div className=" flex-1 w-52">

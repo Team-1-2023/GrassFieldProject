@@ -23,7 +23,8 @@ console.log(data, "data home");
      getData();
   }, []);
 
-  
+  // const currentUser=useContext(currentUser)
+  // console.log(currentUser) 
   return (
     <Layout>
       <div className="flex p-8 h-screen">

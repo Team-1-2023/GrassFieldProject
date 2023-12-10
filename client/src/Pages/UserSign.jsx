@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const UserSign = () => {
 
     const [inputs, setInputs] = useState(
@@ -29,7 +30,7 @@ const UserSign = () => {
             await axios.post("http://localhost:3000/api/users/signup", inputs)
             navigate("/userlog")
         } catch (err) {
-            setError("lol",err)
+            setError(err)
         }
     }
 
