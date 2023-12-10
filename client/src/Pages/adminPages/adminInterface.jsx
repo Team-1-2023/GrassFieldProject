@@ -5,7 +5,7 @@ import ProductList from "./productList";
 import Users from "./users";
 import Comments from "./comments";
 
-const AdminInterface = () => {
+const AdminInterface = (props) => {
   const [products, setProducts] = useState([]);
   const [view, setView] = useState("products");
   const [users, setUsers] = useState([]);
@@ -37,10 +37,14 @@ const AdminInterface = () => {
 
   return (
     <div>
-      <div className=" mt-6 ml-10 mr-6 h-20 flex items-center justify-between">
-        <button className="text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow hover:bg-gray-100">
+      <div className=" mt-6 ml-10 mr-6 h-20 flex items-center justify-between  border-2  focus-within: border-dotted">
+        <button  onClick ={()=>{
+          (!props.checkbox && props.setPassword(""))
+          props.setLoginView(false)
+          }} className="text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow hover:bg-gray-100">
           Log Out
         </button>
+        <h1 className="text-4xl font-bold mb-4 text-center text-darkRed">Welcome back admin</h1>
         <button
           className="text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow hover:bg-gray-100"
           onClick={() => setFormView(!formView)}
@@ -52,7 +56,7 @@ const AdminInterface = () => {
       {formView && <Form fetchProducts={fetchProducts} />}
       
       {!formView && (
-        <div className="flex mt-20 ml-6 mr-6">
+        <div className="flex mt-20 ml-6 mr-6 ">
           <div className="w-32  mr-20">
             <button
               onClick={fetchProducts}
