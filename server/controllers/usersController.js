@@ -7,7 +7,7 @@ const signupcontroller = async (req, res) => {
     var { username, adress, password } = req.body
 
     const data = await chekuser(username)
-    // console.log(data[0][0].password)
+
     if (data[0].length) {
         return res.status(409).send("user already exist")
     }
@@ -27,7 +27,7 @@ const login = async (req, res) => {
     var { username, password } = req.body
 
     const data = await chekuserlogin (username)
-    // console.log(data[0][0].password )
+  
     if (data[0].length ===0) {
         return res.status(404).send("user not found")
     }

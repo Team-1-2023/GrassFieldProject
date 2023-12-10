@@ -43,7 +43,7 @@ module.exports = {
     addProduct: function(req,res){
         addProduct(req.body.name,req.body.category,req.body.price,req.body.quantity,req.body.description,req.body.imageUrl,req.productType,function(error,results){
             if(error) console.log(error)
-           else res.json("added")
+            else res.json("added")
         })
     }
     

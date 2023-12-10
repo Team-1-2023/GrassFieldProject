@@ -6,14 +6,7 @@ import Layout from "../components/Layout.jsx";
 const Admin =  ()=> {
     const [userName,setUserName] = useState("")
     const [password,setPassword] = useState("")
-    
-    // return (
-    //         <Layout>
-    //     <div>
-    //         <AdminInterface/>
-    //     </div>
-    //         </Layout>
-    // )
+
 return (
     <Layout>
 <div className="font-mono bg-gray-400">

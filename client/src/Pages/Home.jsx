@@ -8,7 +8,7 @@ const Home = () => {
   // const {currentUser} = useContext(useContext)
   const [data, setData] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
-console.log(data, "data home");
+
   const getData = async () => {
     try {
       const response = await axios.get("http://localhost:3000/api/products");
@@ -19,21 +19,16 @@ console.log(data, "data home");
   };
 
   useEffect(() => {
-    // console.log(currentUser)  
-     getData();
+    getData();
   }, []);
 
-  // const currentUser=useContext(currentUser)
-  // console.log(currentUser) 
   return (
-    
-      <div className="flex p-8 ">
-        <Filters/>
-        <div className="flex-grow ml-8">
-          <Products data={data} />
-        </div>
+    <div className="flex p-8 ">
+      <Filters />
+      <div className="flex-grow ml-8">
+        <Products data={data} />
       </div>
-  
+    </div>
   );
 };
 
