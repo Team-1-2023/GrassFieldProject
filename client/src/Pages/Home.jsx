@@ -26,14 +26,14 @@ console.log(data, "data home");
   // const currentUser=useContext(currentUser)
   // console.log(currentUser) 
   return (
-    <Layout>
-      <div className="flex p-8 h-screen">
+    
+      <div className="flex p-8 ">
         <Filters/>
         <div className="flex-grow ml-8">
           <Products data={data} />
         </div>
       </div>
-    </Layout>
+  
   );
 };
 

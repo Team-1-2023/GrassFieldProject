@@ -19,7 +19,7 @@ const Product = () => {
 
     const fetchProduct =  () => {
         axios.get(`http://localhost:3000/api/products/${id}`)
-        .then(response => {setProduct(response.data)})
+        .then(response => {setProduct(response.data[0])})
         .catch(error=>console.error(error))
     };
 
