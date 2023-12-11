@@ -22,7 +22,7 @@ const Main = () => {
         <Routes>
         <Route element={<Layout/>}>
           <Route path="/" element={<Home />} />
-          <Route path="basket/1" element={<Basket />} />
+          <Route path="basket/:id" element={<Basket />} />
           <Route path="products/:id" element={<Product />} />
         </Route>
           <Route path="userlog" element={<UserLog />} />

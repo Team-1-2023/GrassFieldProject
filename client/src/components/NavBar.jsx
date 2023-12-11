@@ -11,9 +11,9 @@ const NavBar = () => {
   return (
     <nav className="bg-867978 p-4 flex justify-between items-center">
       <div className="flex items-center">
-        <Link to="/basket/1" className="text-black hover:text-gray-300 px-4 py-2 rounded">
+        {currentUser && <Link to={`basket/${currentUser.idusers}`} className="text-black hover:text-gray-300 px-4 py-2 rounded">
           My Basket
-        </Link>
+        </Link>}
 
         {currentUser? <button onClick= {logout} className="bg-8D0A0A text-black hover:text-gray-300 ml-4 px-4 py-2 rounded">
           Logout

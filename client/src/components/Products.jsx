@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Products = ({ data }) => {
+  // const [products,setProducts]=useState(data)
+  // const filterProducts = (type,category)=> {
+  // axios.get(`http://localhost:3000/api/products/${category}/${type}`)
+  // .then(response=>setProducts(response.data))
+  // .catch(error=>console.error(error))
+  // }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {data.map((product) => (

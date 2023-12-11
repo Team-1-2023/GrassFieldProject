@@ -36,7 +36,7 @@ const Product = () => {
 
   const AddToBasket = () => {
     axios
-      .post(`http://localhost:3000/api/basket/1`, { productid: id })
+      .post(`http://localhost:3000/api/basket/${currentUser.idusers}`, { productid: id })
       .then(() => {
         useNavigate("basket/1");
       })

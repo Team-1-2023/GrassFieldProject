@@ -3,11 +3,12 @@ import axios from "axios";
 import Products from "../components/Products.jsx";
 import Layout from "../components/Layout.jsx";
 import Filters from "../components/Filters.jsx";
+import UserContext from "../../context/UserContext.jsx";
 
 const Home = () => {
-  // const {currentUser} = useContext(useContext)
+  const {currentUser} = useContext(UserContext)
   const [data, setData] = useState([]);
-  const [selectedOption, setSelectedOption] = useState("");
+
 
   const getData = async () => {
     try {
@@ -26,7 +27,7 @@ const Home = () => {
     <div className="flex p-8 ">
       <Filters />
       <div className="flex-grow ml-8">
-        <Products data={data} />
+        <Products data={data}  />
       </div>
     </div>
   );
