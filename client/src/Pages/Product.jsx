@@ -35,7 +35,6 @@ const Product = () => {
   };
 
   const AddToBasket = () => {
-    console.log("how");
     axios
       .post(`http://localhost:3000/api/basket/1`, { productid: id })
       .then(() => {
@@ -72,7 +71,7 @@ const Product = () => {
 
         <div className="flex space-x-4 mb-4">
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-darkRed text-white px-4 py-2 rounded hover:bg-black"
             onClick={() => AddToBasket()}
           >
             Add to Basket
@@ -91,16 +90,24 @@ const Product = () => {
           ></textarea>
         </div>
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded"
+          className="bg-darkRed text-white px-4 py-2 rounded hover:bg-black"
           onClick={() => SubmitReview(review)}
         >
           Submit Review
         </button>
+
+       
+        <div className="mt-4">
+          <h3 className="text-xl font-bold mb-2">Reviews</h3>
+          <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+            {reviews.map((review) => (
+              <p className="text-sm">{review.body}</p>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-        {reviews.map((review) => {
-          return <p className="text-xl">{review.body}</p>;
-        })}
+        
       </div>
     </div>
   );

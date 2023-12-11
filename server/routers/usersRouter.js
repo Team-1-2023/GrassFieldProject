@@ -6,7 +6,7 @@ const {signupcontroller,login,logout} = require("../controllers/usersController.
 
 router.post("/signup", signupcontroller)
 router.post("/login", login)
-router.put("/logout", logout)
+router.post("/logout", logout)
 
 
 module.exports = router

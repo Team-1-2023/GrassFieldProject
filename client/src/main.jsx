@@ -16,8 +16,7 @@ import Layout from "./components/Layout.jsx";
 
 const Main = () => {
   return (
-   <div clasName="app">
-    <div className="container">
+   
     <UserContexProvider>
       <Router>
         <Routes>
@@ -35,8 +34,7 @@ const Main = () => {
         </Routes>
       </Router>
     </UserContexProvider>
-    </div>
-    </div>
+   
   );
 };
 

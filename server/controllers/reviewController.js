@@ -20,7 +20,7 @@ const postReview = (req, res) => {
             console.error(err, "Error adding review");
             res.status(500).json(err);
         } else {
-            res.status(200).json("Review added successfully", results);
+            res.status(200).json(results);
         }
     })
 }

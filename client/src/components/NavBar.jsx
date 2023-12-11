@@ -47,11 +47,15 @@
 // };
 
 // export default NavBar;
-import React from "react";
+import React,{useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 
 const NavBar = () => {
   const navigate = useNavigate();
+
+  const {currentUser, logout} = useContext(UserContext)
+    
 
   return (
     <nav className="bg-867978 p-4 flex justify-between items-center">
@@ -59,12 +63,12 @@ const NavBar = () => {
         <Link to="/basket/1" className="text-black hover:text-gray-300 px-4 py-2 rounded">
           My Basket
         </Link>
-        <Link to="/userLog" className="text-black hover:text-gray-300 ml-4 px-4 py-2 rounded">
+        {/* <Link to="/userLog" className="text-black hover:text-gray-300 ml-4 px-4 py-2 rounded">
           Login
-        </Link>
-        <button className="bg-8D0A0A text-black hover:text-gray-300 ml-4 px-4 py-2 rounded">
+        </Link> */}
+        {currentUser? <button onClick= {logout} className="bg-8D0A0A text-black hover:text-gray-300 ml-4 px-4 py-2 rounded">
           Logout
-        </button>
+          </button> : <Link  to="/userlog">Login</Link>}
       </div>
       <div className="flex items-center justify-center">
         <button className="text-black text-2xl font-bold" onClick={() => navigate("/")}>
