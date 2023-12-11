@@ -15,7 +15,7 @@ const UserSign = () => {
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  console.log(inputs);
+
 
   const [err, setError] = useState(null);
   const handelSubmit = async (e) => {
