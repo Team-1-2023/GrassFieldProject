@@ -8,7 +8,11 @@ import UserContext from "../../context/UserContext.jsx";
 const Home = () => {
   const {currentUser} = useContext(UserContext)
   const [data, setData] = useState([]);
-
+  const [filter, setFilter] = useState("")
+  const [type,setType] = useState("")
+ axios.get(`http://localhost:3000/api/products/${filter}/${type}`).then((response)=>{
+  setData(response.data)
+ })
 
   const getData = async () => {
     try {
@@ -25,7 +29,7 @@ const Home = () => {
 
   return (
     <div className="flex p-8 ">
-      <Filters />
+      <Filters setFilter= {setFilter} setType={setType} />
       <div className="flex-grow ml-8">
         <Products data={data}  />
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Type from "../components/Type";
 
-const Filters = () => {
+const Filters = (props) => {
   const [category, setCategory] = useState("");
 
   return (
@@ -15,6 +15,7 @@ const Filters = () => {
           value="Fragrance"
           onChange={(e) => {
             setCategory(e.target.value);
+            props.setFilter(e.target.value)
           }}
         />
         <span className="ml-2">Fragrance</span>
@@ -28,6 +29,7 @@ const Filters = () => {
           value="Skincare"
           onChange={(e) => {
             setCategory(e.target.value);
+            props.setFilter(e.target.value)
           }}
         />
         <span className="ml-2">Skincare</span>
@@ -41,13 +43,14 @@ const Filters = () => {
           value="Makeup"
           onChange={(e) => {
             setCategory(e.target.value);
+            props.setFilter(e.target.value)
           }}
         />
         <span className="ml-2">Makeup</span>
       </label>
       {category && (
         <div>
-          <h4>Product type:</h4> <Type cat={category} />
+          <h4>Product type:</h4> <Type cat={category}  setType ={props.setType}/>
         </div>
       )}
     </div>

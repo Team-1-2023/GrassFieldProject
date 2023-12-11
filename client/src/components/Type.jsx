@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-const Type = ({cat}) => {
+const Type = ({cat,setType}) => {
     const [category,setCategory] = useState('')
     const [types,setTypes] = useState([])
     const [productType,setProductType] = useState("")
@@ -26,7 +26,9 @@ const Type = ({cat}) => {
           name="radioOption"
           value={type}
         
-          onChange={(e) => {setProductType(e.target.value)} }
+          onChange={(e) => {
+            setType(e.target.value)
+            setProductType(e.target.value)} }
         />
         <span className="ml-2">{type}</span>
       </label>)
